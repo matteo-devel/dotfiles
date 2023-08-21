@@ -6,6 +6,8 @@
 name = "python"
 # language-servers = ["pyright"]
 language-server = { command = "pyright-langserver", args = ["--stdio"] }
+# https://github.com/helix-editor/helix/discussions/5369
+config = {}
 
 [[language]]
 name = "cpp"
