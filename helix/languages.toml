@@ -1,0 +1,22 @@
+# [language-server]
+# clangd = { command = "clangd", args=["--compile-commands-dir=build", "--header-insertion=never", "--suggest-missing-includes", "--clang-tidy", "--background-index"] }
+# pyright = { command = "pyright-langserver", args = ["--stdio"] }
+
+[[language]]
+name = "python"
+# language-servers = ["pyright"]
+language-server = { command = "pyright-langserver", args = ["--stdio"] }
+
+[[language]]
+name = "cpp"
+# language-servers = ["clangd"]
+language-server = { command = "clangd", args=["--compile-commands-dir=build", "--header-insertion=never", "--suggest-missing-includes", "--clang-tidy", "--background-index"] }
+roots = [".git"]
+formatter = { command = "clang-format", args=['--style={BasedOnStyle: llvm, IndentWidth: 8}'] }
+auto-format = true
+file-types = ["cpp", "c", "h", "hpp"]
+indent = { tab-width = 8, unit = "        " }
+
+[[language]]
+name = "cmake"
+formatter = { command = "cmake-format", args=["-i"] }

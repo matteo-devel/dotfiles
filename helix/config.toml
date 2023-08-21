@@ -1,0 +1,21 @@
+theme = "sonokai"
+
+[editor]
+line-number = "relative"
+cursorline = true
+completion-trigger-len = 1
+# soft-wrap.enable = true
+mouse = false
+idle-timeout = 0
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.indent-guides]
+render = true
+
+[keys.normal]
+# sudo xbps-install -Suy xclip
+y = "yank_joined_to_clipboard"
+P = "paste_clipboard_before"
+p = "paste_clipboard_after"
