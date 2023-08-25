@@ -9,10 +9,11 @@ def handle_subdir(repo_dir, config_dir):
     files = [f.name for f in os.scandir(repo_dir) if f.is_file() and f.name != CONFIG_DIR_FILENAME]
 
     for subdir in subdirs:
-        if not os.path.exists(config_dir + "/" + subdir):
-            os.makedirs(config_dir + "/" + subdir)
+        config_subdir, repo_subdir = os.path.join(config_dir, subdir), os.path.join(repo_dir, subdir)
+        if not os.path.exists(config_subdir):
+            os.makedirs(config_subdir)
 
-        handle_subdir(repo_dir + "/" + subdir, config_dir + "/" + subdir)
+        handle_subdir(repo_subdir, config_subdir)
 
     for file in files:
         if not os.path.exists(os.path.join(config_dir, file)):
