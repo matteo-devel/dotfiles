@@ -19,14 +19,15 @@ render = true
 y = "yank_joined_to_clipboard"
 P = "paste_clipboard_before"
 p = "paste_clipboard_after"
+X = ["extend_line_above"]
 # https://github.com/helix-editor/helix/discussions/6943
-X = ["extend_line_up", "extend_to_line_bounds"]
+# https://github.com/helix-editor/helix/issues/3279
+# https://github.com/helix-editor/helix/issues/7023
 # https://stackoverflow.com/questions/71571408/multiple-tables-with-the-same-values-in-toml
+
 [keys.select]
 # sudo xbps-install -Suy xclip
 y = "yank_joined_to_clipboard"
 P = "paste_clipboard_before"
 p = "paste_clipboard_after"
-# https://github.com/helix-editor/helix/discussions/6943
-X = ["extend_line_up", "extend_to_line_bounds"]
-
+X = ["extend_line_above"]

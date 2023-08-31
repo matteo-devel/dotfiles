@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 sudo xbps-install -u xbps
 
-PKGS="helix redshift github-cli git translate-shell xclip clang clang-tools-extra pyright zellij python3-pip curl htop"
+# nano for gh pr create TODO add mpv black
+PKGS="helix redshift github-cli git translate-shell xclip clang clang-tools-extra pyright zellij python3-pip curl htop mmv nano go gopls cmake"
 # in order to sync time on Void Linux
 # refs: https://www.reddit.com/r/voidlinux/comments/z691x6/tutorial_how_to_sync_the_time_on_void_linux/
 #       https://docs.voidlinux.org/config/services/index.html#enabling-services
@@ -12,8 +13,13 @@ PKGS="$PKGS chrony"
 PKGS="$PKGS gnome-disk-utility"
 sudo xbps-install -Suy $PKGS
 
+pip3 install cmake-format cmake-language-server # add to path '/home/matteo/.local/bin'
+
 #enable sync-time service
 sudo ln -s /etc/sv/chronyd /var/service && sudo sv up chronyd
+
+# TODO install rust and rust-analyzer
+# https://github.com/rust-lang/rust-analyzer/issues/14776
 
 # install poetry and update it
 # refs: https://python-poetry.org/docs/#installing-with-the-official-installer

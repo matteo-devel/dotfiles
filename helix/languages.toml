@@ -9,6 +9,8 @@ language-server = { command = "pyright-langserver", args = ["--stdio"] }
 # https://github.com/helix-editor/helix/discussions/5369
 config = {}
 
+# https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers#rust
+
 [[language]]
 name = "cpp"
 # language-servers = ["clangd"]
@@ -22,3 +24,5 @@ indent = { tab-width = 8, unit = "        " }
 [[language]]
 name = "cmake"
 formatter = { command = "cmake-format", args=["-i"] }
+file-types = ["CMakeLists.txt"]
+language-server = { command = "cmake-language-server" }
